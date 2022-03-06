@@ -1,30 +1,30 @@
-untuk install image
+INSTALL IMAGE
 - sudo docker pull nama_iamge:tag 
   (docker pull mongo:5.0.6-focal)
 
-untuk melihat semua image
-- sudo docker image
+MELIHAT SEMUA IMAGE
+- sudo docker images
 
-untuk melihat semua container
+MELIHAT SEMUA CONTAINER
 - sudo docker container ls --all
 
-untuk membuat container dari images yang sudah ada
+MEMBUAT CONTAINER DARI IMAGE YANG SUDAH ADA
 - sudo docker container create --name nama_container nama_image:tag 
   (sudo docker container create --name mongoserver506 mongo:5.0.6-focal)
 - untuk publish port ke luar container
   (sudo docker container create --name mongoserver506 -p portUntukLuar:portDefault mongo:5.0.6-focal)
 
-untuk menjalankan container 
+MENJALANKAN CONTAINER
 - sudo docker container start nama_container 
   (sudo docker container start mongoserver506)
 
-untuk menghapus container
+MENGHAPUS CONTAINER
 - sebelum hapus, harus stop container
   (docker container stop nama_container nama_container2)
 - sudo docker container rm nama_container nama_container2
   (sudo docker container rm mongoserver506)
 
-untuk menghapus image
+MENGHAPUS IMAGE
 - jika ada kontainer yang memakai image(yang mau dihapus) harus stop dan hapus container dulu
 - sudo docker image rm nama_container:tag
   (sudo docker image rm mongo:5.0.6-focal)
